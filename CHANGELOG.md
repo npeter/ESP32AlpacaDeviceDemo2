@@ -6,60 +6,42 @@
 1. main.cpp VERSION 1.0.0
 
 
-## Open/ongoing Topics
+## 1.1.0 2025-09-10
 1. Test DeviceState with NINA 3.2 Beta 8
-    
     ASCOM Device State: For drivers that implement the new ASCOM 7 Device State the application will now use the state when possible instead of polling individual fields
+2. Usage of ESP32AlpacaDevice2 4.3.0
+    
 
 
 
-### Investigation Test with NINA 3.3 Beta 8
+
+### Investigation: Usage of devicestate during polling by NINA. Test with NINA 3.2 Beta 8
+
+See also (https://ascom-standards.org/newdocs/interfaces.html)
 
 Status 2025-09-08
-1. SWITCH: NOK - Zyklisch getswitchname 0 /getswitchvalue 0, ... , getswitchname 3 /getswitchvalue 3
-    PUT connected True -> OK
-    GET connected -> true OK
-    GET interfaceversion -> 3 OK
-    GET devicestate -> switchvalues... but not switchname?
-    -> devicestate not called
+1. SWITCH: <br>
+    - => NOK devicestate not called (tbi)
 
-2. OBSERVING_CONDITIONS: 
-    PUT connected True -> OK
-    GET connected -> true OK
-    GET interfaceversion -> 2 OK
-    GET devicestate ->  ... OK
-    GET description -> ... OK
-    GET averageperiod -> 0.0000 OK
-    GET driverinfo -> ... OK
-    GET devicestate -> ... OK
-    GET driverversion -> ... OK
-    GET rainrate -> ... OK
-    GET devicestate -> ... OK
-    NINA: Error Object reference not set to an instance of an object
-    ... no put connection false
-    -> Why rainrate ... missed in devicestate
+2. OBSERVING_CONDITIONS: <br>
+    - GET connected 
+    - GET averageperiod (its not part of devicestate)
+    - GET devicestate
+    - => OK
 
 3. FOCUSER
-    PUT connected True -> OK
-    GET connected -> true OK
-    GET interfaceversion -> 4 OK
-    GET devicestate -> ... tempcompavailable missed NOK
-    ...
-    cyclic: 
-    GET devicestate
-    GET tempcomp available -> missed
-    GET connected
+    - GET devicestate
+    - GET tempcompavailable
+    - GET connected
+
+    - Remark: OK, but polling of tempcompavailable which is not part of devicestate
 
 4. Cover Calibrator
-    PUT connected True -> OK
-    GET connected -> true OK
-    GET interfaceversion -> 2 OK
-    GET devicestate -> Brightness, CalibratorState, CoverState OK
-    cyclic:
-    GET devicestate
-    GET calibratorstate -> WHY
-    GET calibratorstate -> WHY
-    GET connected
+    - GET connected
+    - GET devicestate
+    - GET calibratorstate -> WHY
+    - GET calibratorstate -> WHY
+    - Remark: OK, but redundant call of calibratorstate (tbi)
     
 
 

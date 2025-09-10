@@ -2,6 +2,7 @@
   Description:    ASCOM Alpaca ESP32 Server Test
   Copyright 2024-2025 peter_n@gmx.de. All rights reserved.
 **************************************************************************************************/
+#define VERSION "1.1.0"
 
 // commend/uncommend to enable/disable device testsing with templates
 #define TEST_COVER_CALIBRATOR     // create CoverCalibrator device
@@ -43,7 +44,6 @@ ObservingConditions observingConditions;
 Focuser focuser;
 #endif
 
-#define VERSION "1.0.0"
 
 // ASCOM Alpaca server with discovery
 AlpacaServer alpaca_server(ALPACA_MNG_SERVER_NAME, ALPACA_MNG_MANUFACTURE, ALPACA_MNG_MANUFACTURE_VERSION, ALPACA_MNG_LOCATION);

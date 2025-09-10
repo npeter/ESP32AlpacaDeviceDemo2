@@ -1,7 +1,5 @@
 # ESP32AlpacaDeviceDemo2
 
-In Work ...
-
 Example and test program for the [ESP32AlpacaDevice2](https://github.com/npeter/ESP32AlpacaDevices2) library.
 <br>
 The project provides an easy way to get started and a first introduction to the library.
@@ -24,4 +22,5 @@ Before uploading the application, the ESP32's filesystem should be initialized a
 2. PROJECT TASKS/"your env"/Platform/**Upload Filesystem image**
 <br>
 
-As a test client, [Conform Universal](https://github.com/ASCOMInitiative/ConformU) from the [ASCOM Initiative](https://ascom-standards.org/Initiative/Index.htm) can be used.
+As a test client, [Conform Universal](https://github.com/ASCOMInitiative/ConformU) from the [ASCOM Initiative](https://ascom-standards.org/Initiative/Index.htm) can be used.<br>
+Tested with NINA 3.2 Beta 8

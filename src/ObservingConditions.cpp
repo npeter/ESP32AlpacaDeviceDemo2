@@ -19,14 +19,15 @@ void ObservingConditions::Begin()
     SetSensorDescriptionByIdx(kOcDewPointSensorIdx, "DewPoint Description");
     SetSensorDescriptionByIdx(kOcHumiditySensorIdx, "Humidity Description");
     SetSensorDescriptionByIdx(kOcPressureSensorIdx, "Pressure Description");
-    SetSensorDescriptionByIdx(kOcRainRateSensorIdx, "Rain Description");
+    SetSensorDescriptionByIdx(kOcRainRateSensorIdx, "RainRate Description");
     SetSensorDescriptionByIdx(kOcSkyBrightnessSensorIdx, "SkyBrightness Description");
     SetSensorDescriptionByIdx(kOcSkyQualitySensorIdx, "SkyQuality  Description");
     SetSensorDescriptionByIdx(kOcSkyTemperatureSensorIdx, "SkyTemperature  Description");
     SetSensorDescriptionByIdx(kOcStarFwhmSensorIdx, "StarFwhm  Description");
     SetSensorDescriptionByIdx(kOcTemperatureSensorIdx, "Temperature  Description");
     SetSensorDescriptionByIdx(kOcWindDirectionSensorIdx, "WindDirection  Description");
-    SetSensorDescriptionByIdx(kOcWindGuestSensorIdx, "WindGuest  Description");
+    SetSensorDescriptionByIdx(kOcWindGustSensorIdx, "WindGust  Description");
+    SetSensorDescriptionByIdx(kOcWindSpeedSensorIdx, "WindSpeed  Description");
 
     // adapt if not implemented
     SetSensorImplementedByIdx(kOcCloudCoverSensorIdx, true);
@@ -40,7 +41,7 @@ void ObservingConditions::Begin()
     SetSensorImplementedByIdx(kOcStarFwhmSensorIdx, true);
     SetSensorImplementedByIdx(kOcTemperatureSensorIdx, true);
     SetSensorImplementedByIdx(kOcWindDirectionSensorIdx, true);
-    SetSensorImplementedByIdx(kOcWindGuestSensorIdx, true);
+    SetSensorImplementedByIdx(kOcWindGustSensorIdx, true);
     SetSensorImplementedByIdx(kOcWindSpeedSensorIdx, true);
 
     // init sensor and sensor data
@@ -56,7 +57,7 @@ void ObservingConditions::Begin()
     SetSensorValueByIdx(kOcStarFwhmSensorIdx, 9.0, system_time);
     SetSensorValueByIdx(kOcTemperatureSensorIdx, 10.0, system_time);
     SetSensorValueByIdx(kOcWindDirectionSensorIdx, 1.0, system_time);
-    SetSensorValueByIdx(kOcWindGuestSensorIdx, 2.0, system_time);
+    SetSensorValueByIdx(kOcWindGustSensorIdx, 2.0, system_time);
     SetSensorValueByIdx(kOcWindSpeedSensorIdx, 3.0, system_time);
 
     SetAveragePeriod(0.0);
